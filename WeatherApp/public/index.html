@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blissful Skies | Arlington Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-decor" aria-hidden="true">
+    <img src="assets/sun-buddy.svg" alt="" class="buddy buddy-sun" />
+    <img src="assets/snow-buddy.svg" alt="" class="buddy buddy-snow" />
+  </div>
+  <main class="app-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <img src="assets/sun-buddy.svg" alt="Goofy weather face" class="brand-icon" />
+        <span class="brand-name">Blissful Skies</span>
+      </div>
+      <div class="greeting">
+        <h1>Peaceful vibes, Arlington!</h1>
+        <p>Here is your live weather paired with a soothing Quranic reminder.</p>
+      </div>
+    </header>
+
+    <section class="ayah-card" id="ayah-card">
+      <div class="ayah-loading" id="ayah-loading">Summoning a thoughtful ayah…</div>
+      <p class="ayah-ar" id="ayah-ar"></p>
+      <p class="ayah-en" id="ayah-en"></p>
+      <span class="ayah-ref" id="ayah-ref"></span>
+      <div class="ayah-meta" id="ayah-meta">
+        <span class="meta-line" id="ayah-updated"></span>
+        <span class="meta-line" id="ayah-next"></span>
+      </div>
+      <div class="audio-controls" id="audio-controls" hidden>
+        <button class="audio-toggle" id="ayah-audio-toggle" type="button" disabled>Play surah recitation</button>
+        <span class="audio-status" id="ayah-audio-status"></span>
+        <audio id="ayah-audio" preload="none" loop></audio>
+      </div>
+      <button class="refresh-ayah" id="refresh-ayah" type="button">Show me another</button>
+    </section>
+
+    <section class="weather-panel">
+      <div class="weather-main">
+        <span class="weather-location" id="weather-location">—</span>
+        <div class="temperature">
+          <span class="temp-value" id="temp-value">--</span>
+          <span class="temp-unit">°F</span>
+        </div>
+        <span class="feels-like" id="feels-like">Feels like --°F</span>
+        <span class="condition" id="condition">Loading conditions…</span>
+        <div class="timing" id="weather-timing">
+          <span class="meta-line" id="weather-updated"></span>
+          <span class="meta-line" id="weather-next"></span>
+        </div>
+      </div>
+      <div class="weather-extra">
+        <div class="stat">
+          <span class="label">Humidity</span>
+          <span class="value" id="humidity">--%</span>
+        </div>
+        <div class="stat">
+          <span class="label">Wind</span>
+          <span class="value" id="wind">-- mph</span>
+        </div>
+      </div>
+      <form class="location-form" id="location-form">
+        <label for="location-input">Change location</label>
+        <div class="input-group">
+          <input id="location-input" name="location" placeholder="Try Alexandria,VA or ZIP code" autocomplete="off" />
+          <button type="submit">Update</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer-note">
+      <p>Powered by your OpenAI APIs. Keep smiling, even the sun buddy looks up to you.</p>
+    </footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
